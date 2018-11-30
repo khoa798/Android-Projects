@@ -29,3 +29,36 @@ ASGN1:
       
       
 I had many difficulties getting the hang of fragments overall and it definitely was a nice learning experience. Getting the hang of Android studio and the complexities of the Java language is always a big plus!
+
+ASGN3:
+Create a background service to detect phone movement for Android.
+
+Here are some notes taken at that time
+Detecting phone movement
+
+Plan to create:
+1. When app first starts, create a background service running in its own thread
+2. Create a variable called "first_accel_time" : this variables stores the time, T0, of when the background service first started
+	2.5. Set "first_accel_time = null" initially
+	2.6. Create variable T1, storing the time if the phone moved
+	2.7. If T1 - T0 > 30 seconds , we set first_accel_time = T1
+	2.8 
+3. We measure movement from the accelerometer, measure significant acceleration in x and y directions 
+
+
+---- 
+
+Main Activity:
+
+1. Start the service
+2. Binds to it
+3. Calls the method didItMove to service --> calls to ServiceTask
+4. Update UI accordingly
+
+
+
+---
+
+Clear Button: Activity calls the service and the service
+1. Set T0 to the current time
+2. Set first_accel_time = null
